@@ -30,6 +30,8 @@ Since list cards are passed they need a id to track.
 A Card factory will be responsible for creating cards with unique id
 Change text to card and modularise code
 
+A cardList to hold all card objects. Add, delete will happen there
+
 
 create multiple list
 

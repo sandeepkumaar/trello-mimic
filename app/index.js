@@ -1,36 +1,37 @@
 import React, { useState }  from "react";
 
+import CardForm from "./card-list/card-form";
+
+import createCard from "./card-list/create-card"; 
+
 
 module.exports = function App() {
-	const [ list, setList] = useState([]);
+	const [ cardList, setCardList ] = useState([]);
 
-	const [input, setInput] =  useState("");
 
-	const handleSubmit = function handleSubmit(e) {
-		e.preventDefault();
-		setList(prevList => [...prevList, input]);
-		setInput("");
+	const handleCardInput = function handleCardInput(text) {
+		const card = createCard(text);
+		setCardList(prevCardList => [...prevCardList, card]);
 	};
 
-	const handleClick = function handleClick(id) {
-		setList(prevList => {
-		  return prevList.filter((item, index) => id !== index)
+	const handleCardDelete = function handleCardDelete(card) {
+		setCardList(prevCardList => {
+		  return prevCardList.filter(cardItem =>  card.id !== cardItem.id)
 			
 		})
-	}
+	};
 
 
 	return (
 		<div className="list-container">
-			<form onSubmit={handleSubmit}>
-				<input type="text" value={input} onChange={e => setInput(e.target.value)}/>
-			</form>
+			<CardForm onCardInput={handleCardInput}/>
 			<ul>
 				{ 
-					list.map((item, index) => (
+					cardList.map((card, index) => (
 						<li key={index}>
-							<span>{item}</span>
-							<button onClick={e => handleClick(index)}>delete</button>
+							<span>{card.id}</span>
+							<span>{card.desc}</span>
+							<button onClick={e => handleCardDelete(card)}>delete</button>
 						</li> 
 					))
 				}
