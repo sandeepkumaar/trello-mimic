@@ -7,27 +7,6 @@
   box-sizing: border-box;
 }
 
-/**
- * html element takes full viewports width.
- * Useful to SPAs
- * html itself is a `position` element allows us to
- * position other elments
- */
-html{
-  height: 100%;
-  overflow: auto;
-}
-
-
-/**
-* By default takes the full screen space
-* Overflow
-*/
-body{
-  min-height: 100%;
-  position: relative;
-  line-height: 1.6em;
-}
 
 /**
  * Fallback styles, can be overridden by component styles
