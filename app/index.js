@@ -1,42 +1,34 @@
 import React, { useState }  from "react";
 
-import CardForm from "./card-list/card-form";
 
-import createCard from "./card-list/create-card"; 
-
+import CardList from "./card-list";
 
 module.exports = function App() {
-	const [ cardList, setCardList ] = useState([]);
+	const [ listContainer, setListContainer ] = useState([]);
 
-
-	const handleCardInput = function handleCardInput(text) {
-		const card = createCard(text);
-		setCardList(prevCardList => [...prevCardList, card]);
-	};
-
-	const handleCardDelete = function handleCardDelete(card) {
-		setCardList(prevCardList => {
-		  return prevCardList.filter(cardItem =>  card.id !== cardItem.id)
-			
-		})
-	};
-
+	const handleClick = function handleClick(e) {
+		setListContainer(prevListCount => [...prevListCount , 1])
+	}	
 
 	return (
-		<div className="list-container">
-			<CardForm onCardInput={handleCardInput}/>
-			<ul>
-				{ 
-					cardList.map((card, index) => (
-						<li key={index}>
-							<span>{card.id}</span>
-							<span>{card.desc}</span>
-							<button onClick={e => handleCardDelete(card)}>delete</button>
-						</li> 
-					))
+		<div>
+			<button onClick={handleClick}>Add List</button>
+			<ul style={{display: "flex", justifyContent: "space-between"}}>
+				{
+					listContainer.map((item, index) => {
+						return (
+							<li key={index}>
+								<CardList />
+							</li>
+						)
+
+					})
+
 				}
+		
 			</ul>
 		</div>
-	);
+
+	)
 };
 
