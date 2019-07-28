@@ -36,6 +36,14 @@ A cardList to hold all card objects. Add, delete will happen there
 create multiple list
 
 move card from list to list
+### React dnd
+Make the cards draggable 
+
+Make the list droppable
+update the list state when dropped
+
+
+
 
 add title description to card
 

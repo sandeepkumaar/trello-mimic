@@ -20,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "react": "^16.8.6",
+    "react-dnd-cjs": "^9.3.3",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {

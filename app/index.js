@@ -1,6 +1,8 @@
 import React, { useState }  from "react";
+import { DndProvider } from "react-dnd-cjs";
 
 
+// 
 import CardList from "./card-list";
 
 module.exports = function App() {
@@ -13,20 +15,22 @@ module.exports = function App() {
 	return (
 		<div>
 			<button onClick={handleClick}>Add List</button>
-			<ul style={{display: "flex", justifyContent: "space-between"}}>
-				{
-					listContainer.map((item, index) => {
-						return (
-							<li key={index}>
-								<CardList />
-							</li>
-						)
+			<DndProvider>
+				<ul style={{display: "flex", justifyContent: "space-between"}}>
+					{
+						listContainer.map((item, index) => {
+							return (
+								<li key={index}>
+									<CardList />
+								</li>
+							)
 
-					})
+						})
 
-				}
-		
-			</ul>
+					}
+			
+				</ul>
+			</DndProvider>
 		</div>
 
 	)
