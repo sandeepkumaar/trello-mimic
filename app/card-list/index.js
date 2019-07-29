@@ -3,10 +3,17 @@ import React, { useState }  from "react";
 import CardForm from "./card-form";
 
 import createCard from "./create-card"; 
+import { useDrag } from "react-dnd";
 
 module.exports = function CardList() {
 	const [ cardList, setCardList ] = useState([]);
 
+  const [ {isDragging}, dragRef ] = useDrag({
+    item: { type: "card"},
+    collect: monitor => ({
+      isDragging: !!monitor.isDragging()
+    })
+  });
 
 	const handleCardInput = function handleCardInput(text) {
 		const card = createCard(text);
@@ -20,6 +27,9 @@ module.exports = function CardList() {
 		})
 	};
 
+  // isDragging behaves as state. whenever dom events are triggered 
+  // isDragging gets updated and component is re-rendered
+  console.log(isDragging);
 
 	return (
 		<div className="list-container">
@@ -27,7 +37,7 @@ module.exports = function CardList() {
 			<ul>
 				{ 
 					cardList.map((card, index) => (
-						<li key={index}>
+						<li ref={dragRef} key={index}>
 							<span>{card.id}</span>
 							<span>{card.desc}</span>
 							<button onClick={e => handleCardDelete(card)}>delete</button>
