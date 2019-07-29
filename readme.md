@@ -61,12 +61,12 @@ the useDrag, useDrop inside them using the props of the corresponding components
 
 ### update the list state when dropped
 
+### edit card option
 
 add title description to card
-
-
 add support for comments
+
+add css
 
 Bring redux
 
-add css

@@ -19,8 +19,8 @@ module.exports = function ListCard() {
     }
   });
 
-  const handleCardInput = function handleCardInput(text) {
-    const card = createCard(text);
+  const handleCardFormSubmit = function handleCardFormSubmit({title, description}) {
+    const card = createCard(title, description);
     setCardList(prevCardList => [...prevCardList, card]);
   };
 
@@ -31,14 +31,28 @@ module.exports = function ListCard() {
     })
   };
 
+  const handleCardUpdate = function handleCardUpdate({id, title, description}) {
+    
+    setCardList(prevCardList => {
+      return prevCardList.map(cardItem => (
+         cardItem.id == id ? {...cardItem, title, description} : cardItem
+      ));
+    });
+  };
+
 
   return (
     <li className="list-card-container" ref={dropRef} >
-      <CardForm onCardInput={handleCardInput}/>
+      <CardForm onSubmit={handleCardFormSubmit}/>
       <ul>
         { 
           cardList.map((card, index) => (
-            <Card card={card} onDelete={handleCardDelete} key={index}/>
+            <Card 
+              card={card} 
+              onDelete={handleCardDelete} 
+              onUpdate={handleCardUpdate}
+              key={index}
+            />
           ))
         }
       </ul>
