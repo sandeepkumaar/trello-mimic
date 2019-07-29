@@ -6,31 +6,31 @@ import React, { useState }  from "react";
 import ListCard from "./list-card";
 
 module.exports = function Board() {
-	const [ listContainer, setListContainer ] = useState([]);
+  const [ listContainer, setListContainer ] = useState([]);
   
 
-	const handleClick = function handleClick(e) {
-		setListContainer(prevListCount => [...prevListCount , 1])
-	}	
+  const handleClick = function handleClick(e) {
+    setListContainer(prevListCount => [...prevListCount , 1])
+  } 
 
-	return (
-		<div>
-			<button onClick={handleClick}>Add List</button>
+  return (
+    <div>
+      <button onClick={handleClick}>Add List</button>
 
-				<ul style={{display: "flex", justifyContent: "space-between"}}>
-					{
-						listContainer.map((item, index) => {
-							return (
-									<ListCard key={index}/>
-							)
+        <ul style={{display: "flex", justifyContent: "space-between"}}>
+          {
+            listContainer.map((item, index) => {
+              return (
+                  <ListCard key={index}/>
+              )
 
-						})
+            })
 
-					}
-			
-				</ul>
-		</div>
+          }
+      
+        </ul>
+    </div>
 
-	)
+  )
 };
 

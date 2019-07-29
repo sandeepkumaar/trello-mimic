@@ -59,11 +59,7 @@ the useDrag, useDrop inside them using the props of the corresponding components
 ### useDrag, useDrop on its own component
 
 
-
-
-update the list state when dropped
-
-
+### update the list state when dropped
 
 
 add title description to card

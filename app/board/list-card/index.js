@@ -10,7 +10,13 @@ module.exports = function ListCard() {
 
   const [ , dropRef ] = useDrop({
     accept: "card",
-    drop: (item,monitor) => console.log(item)
+    drop: (item,monitor) => {
+      console.log("card dropped", item);
+      let card = item.card;
+      setCardList(prevCardList => [...prevCardList, card]);
+      // returned as obj, to distinguish card from dnd props
+      return { card };
+    }
   });
 
   const handleCardInput = function handleCardInput(text) {

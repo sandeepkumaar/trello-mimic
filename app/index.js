@@ -9,11 +9,11 @@ import Board from "./board"
 
 module.exports = function App() {
 
-	return (
-		<div>
+  return (
+    <div>
       <Board/>
-		</div>
+    </div>
 
-	)
+  )
 };
 
