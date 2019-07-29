@@ -1,5 +1,6 @@
 import React, { useState }  from "react";
-import { DndProvider } from "react-dnd-cjs";
+import { DndProvider } from "react-dnd";
+import HTML5Backend from "react-dnd-html5-backend";
 
 
 // 
@@ -15,7 +16,7 @@ module.exports = function App() {
 	return (
 		<div>
 			<button onClick={handleClick}>Add List</button>
-			<DndProvider>
+			<DndProvider backend={HTML5Backend}>
 				<ul style={{display: "flex", justifyContent: "space-between"}}>
 					{
 						listContainer.map((item, index) => {

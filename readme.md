@@ -37,7 +37,18 @@ create multiple list
 
 move card from list to list
 ### React dnd
-Make the cards draggable 
+#### Issue: react-dnd's commonjs module is breaking.
+hence falling back to react-dnd esm module, and changing the package.json of
+react-dnd, dnd-core, react-dnd-html5-backend 's main prop to point to `dist/cjs/index.js`
+
+
+
+
+Make the cards draggable
+useDrag
+
+
+
 
 Make the list droppable
 update the list state when dropped
