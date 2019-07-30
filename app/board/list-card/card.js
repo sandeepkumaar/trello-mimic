@@ -29,26 +29,30 @@ module.exports = function Card({ card, onDelete, onUpdate, cardForm }) {
       description,
       id: card.id
     });
+    setEditable(false);
   };
 
 
   return (
     <li className="card-container" ref={dragRef}>
-      <div className="card">
-        <div className="card-data">
-          <span>{card.id}</span>
-          <span>{card.title}</span>
-          <span>{card.description}</span>
+      <div className="card div-8">
+        <div className="card-header">
+          <div><h5>#{card.id}</h5></div>
+          <div className="card-options">
+            <button onClick={e => onDelete(card)}>DELETE</button>
+            <button onClick={e => setEditable(!editable)}>EDIT</button>
+          </div>
         </div>
-        <div className="card-options">
-          <button onClick={e => onDelete(card)}>delete</button>
-          <button onClick={e => setEditable(true)}>Edit</button>
+        <div className="card-main">
+          <div><h5>{card.title}</h5></div>
+          <div><p>{card.description}</p></div>
         </div>
+
       </div>
       {
         editable && 
         <div className="card-form">
-          <CardForm onSubmit={handleSubmit} />
+          <CardForm onSubmit={handleSubmit} name="update"/>
         </div>
       }
     </li> 

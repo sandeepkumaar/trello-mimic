@@ -71,20 +71,21 @@ TODO: change the fields editable with a update button
 includes some cleanup
 
 
-## focus on card delete and update
+## Card delete and update, css
+
+
+## manage list with id, list state
+
+## change folder structure
+
+Bring redux
 
 ## card with comments as pop-up
 add support for comments  
 maintain them in individual card
 
-## change folder structure
 
 
 
 
-
-manage list with id, list state
-
-
-Bring redux
 

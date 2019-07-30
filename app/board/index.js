@@ -17,14 +17,14 @@ module.exports = function Board() {
 
   return (
     <div className="board-container">
-			<div className="div-32">
+			<div className="board-form div-32">
 				<form className="form">
 					<input className="input gutter-8" type="text" value={listInput} onChange={e => setListInput(e.target.value) } placeholder="create list"></input>
 					<button className="btn" onClick={handleClick}>Add List</button>
 				</form>
 			</div>
 
-			<div>
+			<div className="board-list">
         <ul className="list-container">
           {
             listContainer.map((item, index) => {

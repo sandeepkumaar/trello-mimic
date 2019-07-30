@@ -2,7 +2,7 @@ import React, { useState }  from "react";
 
 
 
-module.exports = function CardForm({onSubmit}) {
+module.exports = function CardForm({onSubmit, name="submit"}) {
   const [ title, setTitle] = useState("");
   const [ description, setDescription ]  = useState("");
 
@@ -37,7 +37,7 @@ module.exports = function CardForm({onSubmit}) {
 				/>
 			</div>
 
-      <button className="btn" type="submit">submit</button>
+      <button className="btn" type="submit">{name}</button>
     </form>
   );
 }

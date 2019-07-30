@@ -61,7 +61,7 @@ html,body{
   .app-header {
     height: 56px;
     padding: 16px 16px 0px 16px;
-    background: #3F51B5;
+    background: #303F9F;
     color: white;
   }
 
@@ -89,16 +89,31 @@ html,body{
 	padding: 16px;
 }
 
-
-.board-container {
-	text-align: right;
+.input {
+  border: 1px solid #C5CAE9;
+  padding: 4px 8px 4px 8px;
+  height: 36px;
+  width: 100px;
 }
 
-.board-container .form {
+.board-container {
+}
+.board-form {
+   text-align: right;
+}
+
+.board-form .input {
+  width: 200px;
+}
+.board-list {
+
 }
 
 .btn{
-	background:#4CAF50;
+	background:#3F51B5;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
 
 }
 
@@ -111,11 +126,6 @@ html,body{
 }
 
 
-.input {
-	border: 1px solid #C5CAE9;
-	padding: 4px 8px 4px 8px;
-	height: 36px;
-}
 
 .list-container {
 	display: flex; 
@@ -127,7 +137,8 @@ html,body{
 	min-height: 320px;
 	margin-bottom: 32px;
 	padding: 8px;
-	border: 1px solid #eee;
+	border: 1px solid #bdbdbd;
+  max-width: 320px;
 
 }
 
@@ -135,3 +146,53 @@ html,body{
 	display: flex;
 
 }
+
+.card-container {
+}
+
+.card {
+  display: flex;
+  padding: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),
+0 1px 1px 0 rgba(0,0,0,.14),
+0 2px 1px -1px rgba(0,0,0,.12);
+}
+
+.card-header {
+  margin-right: 16px;
+  padding: 0px 8px;
+  width: 108px;
+  border-right: 1px solid #9E9E9E;
+}
+  .card-header h5 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+.card-options {
+  display: flex;
+  justify-content: space-between;
+  color: #3F51B5;
+}
+  .card-options button {
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #757575;
+  }
+  .card-options button:hover {
+    color: #3F51B5;
+  }
+.card-main {
+  flex: 1
+}
+.card-main h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+
+
+
