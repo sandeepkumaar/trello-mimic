@@ -3,7 +3,7 @@ import React, { useState }  from "react";
 
 
 // 
-import ListCard from "./list-card";
+import ListCard from "../list";
 
 module.exports = function Board() {
   const [ boardList, setBoardList ] = useState([]);

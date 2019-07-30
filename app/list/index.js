@@ -1,9 +1,9 @@
 import React, { useState }  from "react";
 import { useDrop } from "react-dnd";
 
-import CardForm from "./card-form";
-import Card from "./card";
-import createCard from "./create-card"; 
+import CardForm from "../card/card-form";
+import Card from "../card";
+import createCard from "../card/create-card"; 
 
 module.exports = function ListCard({list}) {
   const [ cardList, setCardList ] = useState([]);
