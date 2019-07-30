@@ -5,7 +5,7 @@ import CardForm from "./card-form";
 import Card from "./card";
 import createCard from "./create-card"; 
 
-module.exports = function ListCard() {
+module.exports = function ListCard({list}) {
   const [ cardList, setCardList ] = useState([]);
 
   const [ , dropRef ] = useDrop({
@@ -42,10 +42,13 @@ module.exports = function ListCard() {
 
 
   return (
-    <li className="list-card-container" ref={dropRef} >
-			<div className="div-32">
-      	<CardForm onSubmit={handleCardFormSubmit}/>
-			</div>
+    <li className="list-container" ref={dropRef} >
+      <div className="list-header div-32">
+        <h4>{list.name}</h4>
+        <div className="">
+          <CardForm onSubmit={handleCardFormSubmit}/>
+        </div>
+      </div>
 			<div>
 				<ul>
 					{ 
