@@ -80,6 +80,8 @@ includes some cleanup
 
 ## change folder structure
 
+## write readme. how to run. install server and scripts. talk about the bug
+
 Bring redux
 
 ## card with comments as pop-up

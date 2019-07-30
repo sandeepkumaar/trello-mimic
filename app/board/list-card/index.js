@@ -51,7 +51,7 @@ module.exports = function ListCard({list}) {
       <div className="list-header div-32">
         <h4>{list.name}</h4>
         <div className="">
-          <CardForm onSubmit={handleCardFormSubmit}/>
+          <CardForm name="create" onSubmit={handleCardFormSubmit}/>
         </div>
       </div>
 			<div>

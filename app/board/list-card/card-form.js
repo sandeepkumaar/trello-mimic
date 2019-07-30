@@ -8,6 +8,7 @@ module.exports = function CardForm({onSubmit, name="submit"}) {
 
   const handleSubmit = function handleSubmit(e) {
     e.preventDefault();
+    if(!title) return;
     onSubmit({ title, description });
     setTitle("");
     setDescription("");
@@ -37,7 +38,7 @@ module.exports = function CardForm({onSubmit, name="submit"}) {
 				/>
 			</div>
 
-      <button className="btn" type="submit">{name}</button>
+      <button className="btn btn--outline" type="submit">{name}</button>
     </form>
   );
 }

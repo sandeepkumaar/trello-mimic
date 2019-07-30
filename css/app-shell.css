@@ -111,12 +111,20 @@ html,body{
 
 }
 
-.btn{
-	background:#3F51B5;
-  color: white;
+.btn {
   font-weight: bold;
   text-transform: uppercase;
+}
+.btn--contained{
+	background:#3F51B5;
+  color: white;
 
+}
+.btn--outline {
+  background:white;
+  color: #3F51B5;
+  border: 1px solid;
+  
 }
 
 .gutter-8 {
