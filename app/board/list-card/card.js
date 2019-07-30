@@ -10,9 +10,10 @@ module.exports = function Card({ card, onDelete, onUpdate, cardForm }) {
   const [ {isDragging, dropResult}, dragRef ] = useDrag({
     item: { type: "card", card: card},
     end: (item, monitor) => {
-      let { card }  = monitor.getDropResult();
-      //console.log("drag-end", card);
-      onDelete(card);
+      if(monitor.didDrop()) {
+        let { card }  = monitor.getDropResult();
+        onDelete(card);
+      }
     },
     collect: monitor => ({
       isDragging: !!monitor.isDragging(),

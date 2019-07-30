@@ -76,6 +76,8 @@ includes some cleanup
 
 ## manage list with id, list state
 
+## Fix drop bug on same list 
+
 ## change folder structure
 
 Bring redux

@@ -16,6 +16,11 @@ module.exports = function ListCard({list}) {
       setCardList(prevCardList => [...prevCardList, card]);
       // returned as obj, to distinguish card from dnd props
       return { card };
+    },
+    canDrop: (item, monitor) => {
+      let cardExists = card => card.id == item.card.id;
+      //console.log(!cardList.some(cardExists));
+      return !cardList.some(cardExists);
     }
   });
 
