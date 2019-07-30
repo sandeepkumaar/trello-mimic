@@ -1,0 +1,89 @@
+
+/**
+ * align text
+ */
+.center { text-align: center; }
+
+.left{ text-align: left; }
+
+.right { text-align: right; }
+
+
+/**
+ * Text decoration
+ */
+.italic {
+  font-style: italic;
+}
+
+/**
+ * Rounded elements
+ */
+.circle {
+  border-radius: 50%;
+}
+
+/**
+ * Gutters
+ */
+
+.gutter-8 {
+  margin-right: 8px;
+}
+.gutter-16{
+  margin-right: 16px;
+}
+
+
+.div-4 {
+  margin-bottom: 4px;
+}
+.div-8 {
+  margin-bottom: 8px;
+}
+.div-16 {
+  margin-bottom: 16px;
+}
+.div-24 {
+  margin-bottom: 24px;
+}
+.div-32 {
+  margin-bottom: 32px;
+}
+
+.div-48 {
+  margin-bottom: 48px;
+}
+.div-64 {
+  margin-bottom: 64px;
+}
+/**
+ * Size
+ */
+
+.full {
+  width: 100%;
+  height: 100%;
+}
+
+/**
+ * Border defaults
+ */
+.divider {
+  border-bottom: 1px solid;
+  border-color: inherit;
+}
+
+.border-right {
+  border-right: 1px solid;
+}
+
+.border-left {
+  border-left: 1px solid;
+}
+.border-bottom {
+  border-bottom: 1px solid;
+}
+.border-top {
+  border-top: 1px solid;
+}

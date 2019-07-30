@@ -1,0 +1,29 @@
+:root {
+  --primary: #f3f5fa; /*white*/
+  /* --primary-light: */
+  --primary-dark: #dde2f0;
+
+  --secondary: #0981d6; /*blue*/
+  /* --secondary-light: */
+  /* --secondary-dark: */
+
+  --background: #fff;
+  --background-light: #fff;
+  --background-dark: #dce1f1;
+
+  --surface: #fff;
+  --surface-dark: #b3bbd3;
+
+  --surface-variant: #90f8ee;
+  /* --error:  */
+
+  --on-primary: #0f0f0f;
+  --on-secondary: #fff;
+
+  --on-background: #0f0f0f;
+  --on-background-light: #9E9E9E;
+  --on-surface: #4f5a7b;
+  --on-surface-variant: #1f5b55;
+  /* --on-error: */
+
+}

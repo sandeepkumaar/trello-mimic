@@ -1,33 +1,3 @@
-/**
- * Apply border box property to all elements
- * Easier to calculate sizes
- * https://css-tricks.com/box-sizing/
-*/
-*{
-  box-sizing: border-box;
-}
 
-
-/**
- * Fallback styles, can be overridden by component styles
- */
-html,body{
-  padding: 0;
-  margin: 0;
-  width: 100%;
-
-  /* fallback style */
-  background-color: #fff;
-
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-display: optional;
-  color: #444;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  font-size:14px;
-}
 
 

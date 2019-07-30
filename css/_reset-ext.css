@@ -1,0 +1,18 @@
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: initial;
+}
+
+input {
+  border: none;
+  outline: none;
+  font: inherit;
+}
+
+/* overrife flex's hidden attribute */
+[hidden] {
+  display: none !important;
+}

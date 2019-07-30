@@ -7,17 +7,25 @@ import ListCard from "./list-card";
 
 module.exports = function Board() {
   const [ listContainer, setListContainer ] = useState([]);
+	const [listInput, setListInput ] = useState("");
   
 
   const handleClick = function handleClick(e) {
+		e.preventDefault();
     setListContainer(prevListCount => [...prevListCount , 1])
   } 
 
   return (
-    <div>
-      <button onClick={handleClick}>Add List</button>
+    <div className="board-container">
+			<div className="div-32">
+				<form className="form">
+					<input className="input gutter-8" type="text" value={listInput} onChange={e => setListInput(e.target.value) } placeholder="create list"></input>
+					<button className="btn" onClick={handleClick}>Add List</button>
+				</form>
+			</div>
 
-        <ul style={{display: "flex", justifyContent: "space-between"}}>
+			<div>
+        <ul className="list-container">
           {
             listContainer.map((item, index) => {
               return (
@@ -29,6 +37,7 @@ module.exports = function Board() {
           }
       
         </ul>
+			</div>
     </div>
 
   )

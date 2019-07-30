@@ -63,10 +63,28 @@ the useDrag, useDrop inside them using the props of the corresponding components
 
 ### edit card option
 
-add title description to card
-add support for comments
+TODO: change the fields editable with a update button
 
-add css
+## add title description to card
+
+## Add basic css.  to feel the app
+includes some cleanup
+
+
+## focus on card delete and update
+
+## card with comments as pop-up
+add support for comments  
+maintain them in individual card
+
+## change folder structure
+
+
+
+
+
+manage list with id, list state
+
 
 Bring redux
 

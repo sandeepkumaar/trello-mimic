@@ -1,0 +1,137 @@
+/**
+ * Apply border box property to all elements
+ * Easier to calculate sizes
+ * https://css-tricks.com/box-sizing/
+*/
+*{
+  box-sizing: border-box;
+}
+
+/**
+ * html element takes full viewports width.
+ * Useful to SPAs
+ * html itself is a `position` element allows us to
+ * position other elments
+ */
+html{
+  height: 100%;
+  overflow: auto;
+}
+
+
+/**
+* By default takes the full screen space
+* Overflow
+*/
+body{
+  min-height: 100%;
+  position: relative;
+  line-height: 1.6em;
+}
+
+/**
+ * Fallback styles, can be overridden by component styles
+ */
+html,body{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  /* fallback style */
+  background-color: #fff;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-display: optional;
+  color: #444;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size:14px;
+}
+
+
+/**
+ * Appshell
+ */
+.app-container {
+  height: 100vh;
+}
+  .app-header {
+    height: 56px;
+    padding: 16px 16px 0px 16px;
+    background: #3F51B5;
+    color: white;
+  }
+
+	.app-header-title {
+		font-size: 18px;
+
+	}
+		
+    .app-header-menu, .app-header-title{
+    }
+    .app-header-profile{
+
+    }
+
+  .app-main {
+    overflow-y: auto;
+
+  }
+
+  .app-footer {
+    padding: 16px 8px;
+  }
+
+.main {
+	padding: 16px;
+}
+
+
+.board-container {
+	text-align: right;
+}
+
+.board-container .form {
+}
+
+.btn{
+	background:#4CAF50;
+
+}
+
+.gutter-8 {
+ margin-right: 8px;
+}
+
+.div-32 {
+	margin-bottom: 32px;
+}
+
+
+.input {
+	border: 1px solid #C5CAE9;
+	padding: 4px 8px 4px 8px;
+	height: 36px;
+}
+
+.list-container {
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+.list-card-container {
+	margin-right: 32px;
+	min-height: 320px;
+	margin-bottom: 32px;
+	padding: 8px;
+	border: 1px solid #eee;
+
+}
+
+.card-form {
+	display: flex;
+
+}

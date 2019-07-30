@@ -43,19 +43,23 @@ module.exports = function ListCard() {
 
   return (
     <li className="list-card-container" ref={dropRef} >
-      <CardForm onSubmit={handleCardFormSubmit}/>
-      <ul>
-        { 
-          cardList.map((card, index) => (
-            <Card 
-              card={card} 
-              onDelete={handleCardDelete} 
-              onUpdate={handleCardUpdate}
-              key={index}
-            />
-          ))
-        }
-      </ul>
+			<div className="div-32">
+      	<CardForm onSubmit={handleCardFormSubmit}/>
+			</div>
+			<div>
+				<ul>
+					{ 
+						cardList.map((card, index) => (
+							<Card 
+								card={card} 
+								onDelete={handleCardDelete} 
+								onUpdate={handleCardUpdate}
+								key={index}
+							/>
+						))
+					}
+				</ul>
+			</div>
     </li>
   );
 };

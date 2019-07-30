@@ -1,0 +1,43 @@
+/**
+ * https://material.io/design/components/buttons.html
+ * Button types
+ * Text Button (low emphasis)
+ * Outlined button (medium)
+ * Contained button (high)
+ * Toggle button
+ */
+
+
+.btn {
+  min-width: 64px;
+  min-height: 36px;
+  /* min-height: 32px; */
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.btn--text {}
+
+.btn--contained {
+
+}
+
+.btn--outlined {
+  border: 1px solid;
+  border-radius: 6px;
+  border-color: inherit;
+}
+
+.btn--toggle {}
+
+.btn--shaped {
+  border-radius: 16px;
+}
+
+.btn-icon {
+  text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
