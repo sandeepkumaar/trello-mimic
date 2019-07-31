@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDrag } from "react-dnd";
+import { useDrag } from "react-dnd-cjs";
 
 import CardForm from "./card-form";
 

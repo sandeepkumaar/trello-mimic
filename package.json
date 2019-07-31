@@ -8,7 +8,8 @@
     "build": "browserify main.js -t babelify -o public/js/bundle.js -p [ parcelify -o public/css/bundle.css ] -d",
     "clean:js": "rimraf public/js",
     "clean": "npm run clean:js",
-    "watch": "watchify main.js -t babelify -o public/js/bundle.js -p [ parcelify -wo public/css/bundle.css --loglevel verbose ] -dv"
+    "watch": "watchify main.js -t babelify -o public/js/bundle.js -p [ parcelify -wo public/css/bundle.css --loglevel verbose ] -dv",
+    "start": "serve public"
   },
   "keywords": [
     "react-stater",
@@ -20,8 +21,8 @@
   "license": "ISC",
   "dependencies": {
     "react": "^16.8.6",
-    "react-dnd": "^9.3.2",
-    "react-dnd-html5-backend": "^9.3.2",
+    "react-dnd-cjs": "9.2.1",
+    "react-dnd-html5-backend-cjs": "^9.3.3",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
@@ -30,9 +31,10 @@
     "@babel/preset-react": "^7.0.0",
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
-    "parcelify": "^2.2.1",
     "mkdirp": "^0.5.1",
+    "parcelify": "^2.2.1",
     "rimraf": "^2.6.3",
+    "serve": "^11.1.0",
     "watchify": "^3.11.1"
   }
 }

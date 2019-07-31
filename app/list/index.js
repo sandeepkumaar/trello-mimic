@@ -1,5 +1,5 @@
 import React, { useState }  from "react";
-import { useDrop } from "react-dnd";
+import { useDrop } from "react-dnd-cjs";
 
 import CardForm from "../card/card-form";
 import Card from "../card";
