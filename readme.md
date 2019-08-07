@@ -18,7 +18,18 @@ add redux layer
 comment module to card
 Bring redux
 
+## commits
+change ListCard to List
+externalise ListForm and CardForm
+lift cards state to it container ie. Board
 
+
+
+- addList. createList
+
+- addCard
+- deleteCard
+- updateCard
 
 
 

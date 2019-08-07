@@ -3,7 +3,7 @@ import React, { useState }  from "react";
 
 
 // 
-import ListCard from "../list";
+import List from "../list";
 
 module.exports = function Board() {
   const [ boardList, setBoardList ] = useState([]);
@@ -30,7 +30,7 @@ module.exports = function Board() {
         {
           boardList.map((list, index) => {
             return (
-                <ListCard list={list}  key={index}/>
+                <List list={list}  key={index}/>
             )
 
           })

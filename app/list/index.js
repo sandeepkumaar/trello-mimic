@@ -5,7 +5,7 @@ import CardForm from "../card/card-form";
 import Card from "../card";
 import createCard from "../card/create-card"; 
 
-module.exports = function ListCard({list}) {
+module.exports = function List({list}) {
   const [ cardList, setCardList ] = useState([]);
 
   const [ , dropRef ] = useDrop({
