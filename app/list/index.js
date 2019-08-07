@@ -5,45 +5,47 @@ import CardForm from "../card/card-form";
 import Card from "../card";
 import createCard from "../card/create-card"; 
 
-module.exports = function List({list}) {
-  const [ cardList, setCardList ] = useState([]);
+module.exports = function List({list, cards, addCard}) {
+  //const [ cards, setCards] = useState([]);
 
   const [ , dropRef ] = useDrop({
     accept: "card",
     drop: (item,monitor) => {
       console.log("card dropped", item);
       let card = item.card;
-      setCardList(prevCardList => [...prevCardList, card]);
+      setCards(prevCardList => [...prevCardList, card]);
       // returned as obj, to distinguish card from dnd props
       return { card };
     },
     canDrop: (item, monitor) => {
       let cardExists = card => card.id == item.card.id;
       //console.log(!cardList.some(cardExists));
-      return !cardList.some(cardExists);
+      return !cards.some(cardExists);
     }
   });
 
   const handleCardFormSubmit = function handleCardFormSubmit({title, description}) {
-    const card = createCard(title, description);
-    setCardList(prevCardList => [...prevCardList, card]);
+    const card = createCard(title, description, list.id);
+    addCard(card);
+
+    //setCards(prevCardList => [...prevCardList, card]);
   };
 
-  const handleCardDelete = function handleCardDelete(card) {
-    setCardList(prevCardList => {
-      return prevCardList.filter(cardItem =>  card.id !== cardItem.id)
-      
-    })
-  };
+  //const handleCardDelete = function handleCardDelete(card) {
+  //  setCards(prevCardList => {
+  //    return prevCardList.filter(cardItem =>  card.id !== cardItem.id)
+  //    
+  //  })
+  //};
 
-  const handleCardUpdate = function handleCardUpdate({id, title, description}) {
-    
-    setCardList(prevCardList => {
-      return prevCardList.map(cardItem => (
-         cardItem.id == id ? {...cardItem, title, description} : cardItem
-      ));
-    });
-  };
+  //const handleCardUpdate = function handleCardUpdate({id, title, description}) {
+  //  
+  //  setCards(prevCardList => {
+  //    return prevCardList.map(cardItem => (
+  //       cardItem.id == id ? {...cardItem, title, description} : cardItem
+  //    ));
+  //  });
+  //};
 
 
   return (
@@ -57,11 +59,9 @@ module.exports = function List({list}) {
 			<div>
 				<ul>
 					{ 
-						cardList.map((card, index) => (
+						cards.map((card, index) => (
 							<Card 
 								card={card} 
-								onDelete={handleCardDelete} 
-								onUpdate={handleCardUpdate}
 								key={index}
 							/>
 						))
@@ -71,3 +71,5 @@ module.exports = function List({list}) {
     </li>
   );
 };
+//onDelete={handleCardDelete} 
+//onUpdate={handleCardUpdate}

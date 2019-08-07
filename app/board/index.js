@@ -1,6 +1,9 @@
 import React, { useState }  from "react";
 // 
 import List from "../list";
+import ListForm from "../list/list-form"
+
+
 
 let listId = 0;
 const createList = function createList(title, boardId) {
@@ -10,37 +13,24 @@ const createList = function createList(title, boardId) {
     title
   }
 };
-const ListForm = function ListForm({onSubmit}) {
-  const [input, setInput ] = useState("");
-
-  const handleSubmit = function handleSubmit(e) {
-    e.preventDefault();
-    if(!input) return;
-    onSubmit(input);
-    setInput("");
-  } 
-  return (
-    <form className="form" onSubmit={handleSubmit}>
-      <input 
-        className="input gutter-8" 
-        type="text" 
-        value={input} 
-        onChange={e => setInput(e.target.value) } 
-        placeholder="create list">
-      </input>
-      <button className="btn btn--contained" type="submit" >Add List</button>
-    </form>
-  );
-
-}
 module.exports = function Board() {
-  const [ boardList, setBoardList ] = useState([]);
+  const [ list, setList ] = useState([]);
+  const [ cards, setCards] = useState([]);
+ 
+  const addCard = function addCard(card) {
+    setCards(cards => [...cards, card]);
+    
+  }
   
 
   const handleSubmit = function handleSubmit(listTitle) {
     const list = createList(listTitle, "b1");
-    setBoardList(prevListCount => [...prevListCount , list])
+    setList(prevListCount => [...prevListCount , list])
   } 
+  
+  let getCardsByList = function getCardsByList(id) {
+    return cards.filter(card => card.listId == id);
+  };
 
   return (
     <div className="board-container">
@@ -50,9 +40,13 @@ module.exports = function Board() {
 
       <ul className="board-list">
         {
-          boardList.map((list, index) => {
+         list.map((list, index) => {
             return (
-                <List list={list}  key={index}/>
+                <List 
+                  list={list}  
+                  cards={getCardsByList(list.id)}
+                  addCard={addCard}
+                  key={index}/>
             )
 
           })

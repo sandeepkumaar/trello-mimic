@@ -45,7 +45,7 @@ lift cards state to it container ie. Board
 - deleteCard
 - updateCard
 
-
+- move card
 
 
 
