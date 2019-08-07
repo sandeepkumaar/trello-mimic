@@ -24,6 +24,20 @@ externalise ListForm and CardForm
 lift cards state to it container ie. Board
 
 
+{
+  board: ["b1", "b2"],
+  list: [{
+    id: "l1",
+    boardId: "b1"
+    title: "New"
+  }],
+  cards: [{
+    id: "c1",
+    listId: "l1",
+    title: "xyz",
+    description: "abc"
+  }]
+}
 
 - addList. createList
 

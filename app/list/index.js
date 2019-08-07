@@ -49,7 +49,7 @@ module.exports = function List({list}) {
   return (
     <li className="list-container" ref={dropRef} >
       <div className="list-header div-32">
-        <h4>{list.name}</h4>
+        <h4>{list.title}</h4>
         <div className="">
           <CardForm name="create" onSubmit={handleCardFormSubmit}/>
         </div>
