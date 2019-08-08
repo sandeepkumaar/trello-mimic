@@ -17,16 +17,30 @@ module.exports = function Board() {
   const [ list, setList ] = useState([]);
   const [ cards, setCards] = useState([]);
  
-  const addCard = function addCard(card) {
+  const handleAddCard = function handleAddCard(card) {
     setCards(cards => [...cards, card]);
     
-  }
+  };
+  const handleCardDelete = function handleCardDelete(card) {
+    setCards(cards => {
+      return cards.filter(cardItem =>  card.id !== cardItem.id)
+    })
+  };
   
+  const handleCardUpdate = function handleCardUpdate(card) {
+    let id = card.id;
+    setCards(cards => {
+      return cards.map(cardItem => (
+         cardItem.id == id ? {...cardItem, ...card} : cardItem
+      ));
+    });
+  };
 
   const handleSubmit = function handleSubmit(listTitle) {
     const list = createList(listTitle, "b1");
     setList(prevListCount => [...prevListCount , list])
   } 
+
   
   let getCardsByList = function getCardsByList(id) {
     return cards.filter(card => card.listId == id);
@@ -45,7 +59,9 @@ module.exports = function Board() {
                 <List 
                   list={list}  
                   cards={getCardsByList(list.id)}
-                  addCard={addCard}
+                  onAddCard={handleAddCard}
+                  onDeleteCard={handleCardDelete}
+                  onUpdateCard={handleCardUpdate}
                   key={index}/>
             )
 

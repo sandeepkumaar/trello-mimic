@@ -5,7 +5,7 @@ import CardForm from "../card/card-form";
 import Card from "../card";
 import createCard from "../card/create-card"; 
 
-module.exports = function List({list, cards, addCard}) {
+module.exports = function List({list, cards, onAddCard, onDeleteCard, onUpdateCard}) {
   //const [ cards, setCards] = useState([]);
 
   const [ , dropRef ] = useDrop({
@@ -13,9 +13,10 @@ module.exports = function List({list, cards, addCard}) {
     drop: (item,monitor) => {
       console.log("card dropped", item);
       let card = item.card;
-      setCards(prevCardList => [...prevCardList, card]);
+      let newCard = { ...card, listId:list.id} 
+      onUpdateCard(newCard);
       // returned as obj, to distinguish card from dnd props
-      return { card };
+      return { newCard };
     },
     canDrop: (item, monitor) => {
       let cardExists = card => card.id == item.card.id;
@@ -26,26 +27,24 @@ module.exports = function List({list, cards, addCard}) {
 
   const handleCardFormSubmit = function handleCardFormSubmit({title, description}) {
     const card = createCard(title, description, list.id);
-    addCard(card);
+    onAddCard(card);
 
     //setCards(prevCardList => [...prevCardList, card]);
   };
 
-  //const handleCardDelete = function handleCardDelete(card) {
-  //  setCards(prevCardList => {
-  //    return prevCardList.filter(cardItem =>  card.id !== cardItem.id)
-  //    
-  //  })
-  //};
+  const handleCardDelete = function handleCardDelete(card) {
+    onDeleteCard(card)
+  };
 
-  //const handleCardUpdate = function handleCardUpdate({id, title, description}) {
-  //  
+  const handleCardUpdate = function handleCardUpdate(card) {
+    onUpdateCard(card)
+    
   //  setCards(prevCardList => {
   //    return prevCardList.map(cardItem => (
   //       cardItem.id == id ? {...cardItem, title, description} : cardItem
   //    ));
   //  });
-  //};
+  };
 
 
   return (
@@ -62,6 +61,8 @@ module.exports = function List({list, cards, addCard}) {
 						cards.map((card, index) => (
 							<Card 
 								card={card} 
+								onDelete={handleCardDelete} 
+								onUpdate={handleCardUpdate}
 								key={index}
 							/>
 						))
@@ -71,5 +72,3 @@ module.exports = function List({list, cards, addCard}) {
     </li>
   );
 };
-//onDelete={handleCardDelete} 
-//onUpdate={handleCardUpdate}

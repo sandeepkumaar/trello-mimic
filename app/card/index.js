@@ -12,7 +12,7 @@ module.exports = function Card({ card, onDelete, onUpdate, cardForm }) {
     end: (item, monitor) => {
       if(monitor.didDrop()) {
         let { card }  = monitor.getDropResult();
-        onDelete(card);
+        //onDelete(card);
       }
     },
     collect: monitor => ({
@@ -25,11 +25,8 @@ module.exports = function Card({ card, onDelete, onUpdate, cardForm }) {
   const [ editable, setEditable ] = useState(false);
 
   const handleSubmit = function handleSubmit({title, description}) {
-    onUpdate({
-      title, 
-      description,
-      id: card.id
-    });
+    let updatedCard = { ...card, title, description };
+    onUpdate(updatedCard);
     setEditable(false);
   };
 
